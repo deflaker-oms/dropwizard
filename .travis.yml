@@ -8,7 +8,7 @@ before_install:
   - unset TRAVIS
   - wget http://www.deflaker.org/maven/apache-maven-3.3.9.zip
   - unzip -qq apache-maven-3.3.9.zip
-  - export M2_HOME=$PWD/apache-maven-3.3.9
+  - export M2_HOME=`$PWD/apache-maven-3.3.9`
   - export PATH=$M2_HOME/bin:$PATH
 script:
   - ./mvnw verify -B
@@ -41,3 +41,4 @@ env:
     - secure: "RI0QcuKMsij3sgRm+Bjhu3X217U6UslvSzcRv13iLLwrTj73zhGi5PF/+kj8Qh1HMQw0oQRR6M8qPqGy82KcjiGbpgPgSy1rVAvkYg+Yw1k7v4l7Vgyj7TNsAM3pqHyojx2jgRjpQsgw/WXQmiahWV6OCOUzdbhEUwVzIXI+vtk="
     - JAVA_OPTS= "'-Xms512m -Xmx2g'"
     - FIREBASE_KEY=AIzaSyDU7I6pnN322BvRNN24jRX52owAvuHH1K4 MAVEN_OPTS="-Xmx3000m"
+    - M2_HOME=$PWD/apache-maven-3.3.9
